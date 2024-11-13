@@ -1,0 +1,170 @@
+body,
+input,
+textarea,
+button {
+    font-family: "Merriweather", serif;
+}
+    *,
+::before,
+::after{
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: min(90%,1200px);
+    overflow: hidden;
+}
+body{background-color: #F2F6F8;color:#2D3E4F}
+
+/** Pie de pag **/
+.encabezado{
+    --disable--backgroun: translate(-100%);
+    --background-img-cheackbox: url(Assest/menu.svg);
+}
+.encabezado :has(.input_cheackbox:checked){
+    --disable--backgroun: translate(0%);
+    --background-img-cheackbox: url(Assest/x.svg);
+}
+
+.barra{
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    height: 90px;
+    background-color: #FFF8F0;
+    color: #3E4C5B;
+}
+/** Pie de pagina **/
+
+
+.barra-logo{
+    width: 140px; /** Tamaño del logo **/
+}
+
+.barra_link-logo,
+.barra_label{
+    z-index: 100;  /** Sobre pone el logo y el menu **/
+}
+
+/** Menú**/
+.barra_label{
+    margin-top: 15px;
+    width: 60px;
+    height: 60px;
+    background-image: var(--background-img-cheackbox);
+    background-size: cover;
+
+    cursor: pointer;
+
+    transition: .4s background-image;
+}
+.input_cheackbox{
+    display: none;
+}
+/** Menú**/
+
+/** Lista de enlases**/
+.barra_list{
+    z-index: 1;
+    position: fixed;
+    inset: 0;
+
+    padding: 0;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+
+    text-align: center;
+    list-style: none;
+    background-color: #FFF8F0 ;
+
+    transform: var(--disable--backgroun);
+    transition: transform .5s;
+}
+
+.barra_link{
+    font-size: 18px;
+    display: inline-block;
+    padding: .8rem .5rem;
+    color: #2D3E4F;
+    text-decoration: none;
+}
+.barra_link:hover{
+    color: #7CCFC0;
+}
+
+.barra_link--cta{
+    border: 1px #000 solid;
+    border-radius: 10px;
+    padding-inline: 1rem;
+}
+/** Lista de enlases**/
+/** Media **/
+@media (width >= 900px) {
+    .encabezado{
+        --disable--backgroun:translate(0%)
+    }
+    .barra_label{
+        display: none;
+        cursor: pointer;
+    }
+    .barra_list{
+        background-color: transparent; /* Fondo transparente en pantallas grandes */
+        color: #2D3E4F;
+        position: static;
+        margin-top: 20px;
+        margin-inline-end: 15px;
+        border-radius: 10px;
+        grid-auto-flow: column;
+        place-content: unset;
+        gap: 2rem;
+    }
+
+    .barra_link:hover {
+        color: #7CCFC0;
+    }
+}
+
+/** Texto de bienvenida **/
+.portada{
+    position: relative;
+    margin: 0;
+    height: 90vh;
+}
+.portada img{
+    opacity: 0.8;
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+}
+
+.portada_button{
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    border-style: none;
+    border-radius: 20px;
+    background-color: #D96E30 ;
+    color: white;
+}
+.portada_button:hover{
+    background-color: #B85C28
+}
+.portada_text{
+    position: absolute;
+
+    top: 60%;
+    left: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+
+    font-size: 1.6rem;
+
+    color: #FFFFFF ;
+    gap: 1.3rem;                 
+}
