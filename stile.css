@@ -1,118 +1,108 @@
+/* Estilo global para fuentes y box-sizing */
 body,
 input,
 textarea,
 button {
-    font-family: "Merriweather", serif;
+    font-family: "Merriweather", serif; /* Fuente principal */
 }
-    *,
+*,
 ::before,
-::after{
+::after {
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Facilita el cálculo de medidas */
 }
-.container{
-    width: min(90%,1200px);
+.container {
+    width: min(90%, 1200px); /* Ancho máximo con adaptabilidad */
     overflow: hidden;
 }
-body{background-color: #F2F6F8;color:#2D3E4F}
-
-/** Pie de pag **/
-.encabezado{
-    --disable--backgroun: translate(-100%);
-    --background-img-cheackbox: url(Assest/menu.svg);
-}
-.encabezado :has(.input_cheackbox:checked){
-    --disable--backgroun: translate(0%);
-    --background-img-cheackbox: url(Assest/x.svg);
+body {
+    background-color: #F2F6F8; /* Fondo claro */
+    color: #2D3E4F; /* Texto oscuro */
 }
 
-.barra{
-    margin-left: 10px;
-    margin-right: 10px;
+/** Estilo del encabezado **/
+.encabezado {
+    --disable--backgroun: translate(-100%); /* Ocultar menú por defecto */
+    --background-img-cheackbox: url(Assest/menu.svg); /* Icono del menú */
+}
+.encabezado :has(.input_cheackbox:checked) {
+    --disable--backgroun: translate(0%); /* Mostrar menú al activar */
+    --background-img-cheackbox: url(Assest/x.svg); /* Icono de cerrar */
+}
+
+/** Barra de navegación **/
+.barra {
+    margin: 0 10px;
     border-radius: 10px;
     display: flex;
-    justify-items: center;
     justify-content: space-between;
     height: 90px;
-    background-color: #FFF8F0;
-    color: #3E4C5B;
+    background-color: #FFF8F0; /* Fondo claro */
+    color: #3E4C5B; /* Texto */
 }
-/** Pie de pagina **/
-
-
-.barra-logo{
-    width: 140px; /** Tamaño del logo **/
+.barra-logo {
+    width: 140px; /* Tamaño del logo */
 }
-
 .barra_link-logo,
-.barra_label{
-    z-index: 100;  /** Sobre pone el logo y el menu **/
+.barra_label {
+    z-index: 100; /* Asegura que estén encima del menú */
 }
 
-/** Menú**/
-.barra_label{
+/** Estilo del menú hamburguesa **/
+.barra_label {
     margin-top: 15px;
     width: 60px;
     height: 60px;
-    background-image: var(--background-img-cheackbox);
+    background-image: var(--background-img-cheackbox); /* Imagen del menú */
     background-size: cover;
-
     cursor: pointer;
-
-    transition: .4s background-image;
+    transition: .4s background-image; /* Animación al cambiar ícono */
 }
-.input_cheackbox{
-    display: none;
+.input_cheackbox {
+    display: none; /* Oculta el input del menú */
 }
-/** Menú**/
 
-/** Lista de enlases**/
-.barra_list{
+/** Lista de enlaces **/
+.barra_list {
     z-index: 1;
     position: fixed;
     inset: 0;
-
     padding: 0;
     display: grid;
-    place-content: center;
+    place-content: center; /* Centrado */
     gap: 1rem;
-
     text-align: center;
-    list-style: none;
-    background-color: #FFF8F0 ;
-
-    transform: var(--disable--backgroun);
+    list-style: none; /* Sin viñetas */
+    background-color: #FFF8F0; /* Fondo del menú desplegable */
+    transform: var(--disable--backgroun); /* Transición para abrir/cerrar */
     transition: transform .5s;
 }
-
-.barra_link{
+.barra_link {
     font-size: 18px;
     display: inline-block;
     padding: .8rem .5rem;
-    color: #2D3E4F;
+    color: #2D3E4F; /* Color del enlace */
     text-decoration: none;
 }
-.barra_link:hover{
-    color: #7CCFC0;
+.barra_link:hover {
+    color: #7CCFC0; /* Color al pasar el cursor */
 }
-
-.barra_link--cta{
-    border: 1px #000 solid;
+.barra_link--cta {
+    border: 1px #000 solid; /* Botón destacado */
     border-radius: 10px;
     padding-inline: 1rem;
 }
-/** Lista de enlases**/
-/** Media **/
+
+/** Responsivo: estilo de barra en pantallas grandes **/
 @media (width >= 900px) {
-    .encabezado{
-        --disable--backgroun:translate(0%)
+    .encabezado {
+        --disable--backgroun: translate(0%);
     }
-    .barra_label{
-        display: none;
-        cursor: pointer;
+    .barra_label {
+        display: none; /* Oculta el menú hamburguesa */
     }
-    .barra_list{
-        background-color: transparent; /* Fondo transparente en pantallas grandes */
+    .barra_list {
+        background-color: transparent; /* Fondo transparente */
         color: #2D3E4F;
         position: static;
         margin-top: 20px;
@@ -122,70 +112,78 @@ body{background-color: #F2F6F8;color:#2D3E4F}
         place-content: unset;
         gap: 2rem;
     }
-
-    .barra_link:hover {
-        color: #7CCFC0;
-    }
 }
 
-/** Texto de bienvenida **/
-.portada{
+/** Sección de bienvenida **/
+.portada {
     position: relative;
     margin: 0;
     height: 90vh;
 }
-.portada img{
-    opacity: 0.8;
+.portada img {
+    opacity: 0.8; /* Efecto semitransparente */
     width: 100%;
     height: 90vh;
-    object-fit: cover;
+    object-fit: cover; /* Imagen adaptada al contenedor */
 }
-
-.portada_button{
+.portada_button {
     font-size: 1.5rem;
     padding: 1rem 3rem;
     border-style: none;
     border-radius: 20px;
-    background-color: #D96E30 ;
+    background-color: #D96E30; /* Color primario del botón */
     color: white;
 }
-.portada_button:hover{
-    background-color: #B85C28
+.portada_button:hover {
+    background-color: #B85C28; /* Color al pasar el cursor */
 }
-.portada_text{
+.portada_text {
     position: absolute;
-
     top: 60%;
     left: 10px;
-    
     display: flex;
     flex-direction: column;
     align-items: start;
     text-align: start;
-
     font-size: 1.6rem;
-
-    color: #FFFFFF ;
-    gap: 1.3rem;                 
+    color: #FFFFFF; /* Texto blanco */
+    gap: 1.3rem;
 }
 
-.Recientes-text{
-    font-size: 2.5rem;
-}
-.galeri_R{
+/** Galería de fotos **/
+.galeri_R {
     margin: 20px;
 }
-.galeri{
+.galeri {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
     gap: 20px;
 }
-
-.photo{
+.photo {
     width: 100%;
-    height: auto;
+    height: 160px;
     object-fit: cover;
     border: #000 min(7px , 10px) solid;
-    border-radius: 8px;
+    border-radius: 8px; /* Bordes redondeados */
+}
+@media (width >= 900px) {
+    .photo {
+        height: 360px; /* Aumenta altura en pantallas grandes */
+    }
+}
+
+/** Blog reciente **/
+.blog_R {
+    margin: 20px;
+}
+.list_blog {
+    display: grid;
+    margin: 10px;
+}
+.item_blog {
+    list-style: none;
+}
+.link_blog {
+    text-decoration: none; /* Sin subrayado */
 }
