@@ -1,0 +1,165 @@
+:root{
+    /** Fondos **/
+    --background_Fondo: #F5F5F5;
+    --background_Header: #FFFFFF;
+    --background_button: #FF6F61;
+    --background_button_hover: #FFEB99;
+    /** Color font**/
+    --color_blanco: #FFFFFF;
+    --color_gris_oscuro: #333333;
+    --color_link_hover: #FF6F61;
+}
+    *,
+::before,
+::after{
+    margin: 0;
+    box-sizing: border-box;}
+/** Fondo de la pag **/
+body {
+    background-color: var(--background_Fondo);
+}
+
+.container{
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.header{
+    --background_input: url(Assest/Menu.svg);
+    --traslation: translate(-100%);
+}
+.header :has(.menu-input:checked) {
+    --background_input:url(Assest/Closet.svg);
+    --traslation: translate(0%);
+
+}
+/** Encabezado **/
+.nav{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    border-radius: 10px;
+
+    background-color: var(--background_Header);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    margin-top: 20px;
+    width: 160px;
+}
+
+.menu{
+    margin-top: 15px;
+    margin-right: 15px;
+
+    width: 100px;
+    height: 100px;
+    
+    background-image: var(--background_input);
+    background-size: cover;
+
+    cursor: pointer;
+
+    transition: .4s background-image
+}
+.menu-input{
+    display: none;
+}
+
+.link-Pag_principal,
+.menu{
+    z-index: 100;
+}
+
+.list{
+    z-index: 1;
+    display: grid;
+
+    inset: 0;
+    
+    position: fixed;
+    place-content: center;
+    
+    background-color: var(--background_Header);
+
+    gap: 1.7rem;
+    list-style: none;
+    text-align: center;
+
+    transform: var(--traslation);
+    transition: transform .5s;
+}
+.list-link {
+    color: var(--color_gris_oscuro);
+    font-size: 2rem;
+    text-decoration: none;
+}
+.list-link:hover {
+    color: var(--color_link_hover);
+}
+
+.presentacion{
+    position: relative;
+    margin: 0;
+    height: 90vh;
+}
+.presentacion img{
+    opacity: 0.8;
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+}
+.contenido_portada{
+    position: absolute;
+
+    top: 50vh;
+    left: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+
+    color: var(--color_blanco) ;
+}       
+.text_h1{
+    font-size: 3rem;
+    margin: none;
+}
+.text_h2{
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+.destinos_visitados{
+    background-color: var(--background_button) ;
+    color: var(--color_blanco);
+    
+    border: none;
+    border-radius: 10px;
+
+    padding: 15px 20px;
+
+    font-weight: bold;
+    font-size: 1.5rem;
+
+    cursor: pointer;
+}
+.destinos_visitados:hover {
+    background-color: var(--background_button_hover);
+    color: var(--color_gris_oscuro);
+}
+
+.foto{
+    height: 30vh;
+    width: 28vw;
+    margin: 10px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: #333333 10px solid;
+}
