@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi ruta personal</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -18,21 +19,21 @@
                     <input type="checkbox" class="menu-input">
                 </label>
                 <!-- Menu: lista -->
-                <ui class="list">
-                    <li class="list-item">
-                        <a href="" class="list-link">Inicio</a>
+                <ui class="nav_list">
+                    <li class="nav_list-item">
+                        <a href="" class="nav_list-link">Inicio</a>
                     </li>
-                    <li class="list-item">
-                        <a href="" class="list-link">Destinos</a>
+                    <li class="nav_list-item">
+                        <a href="" class="nav_list-link">Destinos</a>
                     </li>
-                    <li class="list-item">
-                        <a href="" class="list-link">Blog</a>
+                    <li class="nav_list-item">
+                        <a href="" class="nav_list-link">Blog</a>
                     </li>
-                    <li class="list-item">
-                        <a href="" class="list-link">Galeria</a>
+                    <li class="nav_list-item">
+                        <a href="" class="nav_list-link">Galeria</a>
                     </li>
-                    <li class="list-item">
-                        <a href="" class="list-link list-link--cta">Contacto</a>
+                    <li class="nav_list-item">
+                        <a href="" class="nav_list-link nav_list-link--cta">Contacto</a>
                     </li>
                 </ui>
             </nav>
@@ -45,27 +46,71 @@
                 <button class="destinos_visitados">Destinos visitados</button>
             </div>
         </section>
-        <section class="ultimos_lugares_fotos">
+        <section class="ultimos_lugares-fotos">
             <h1 class="subtitulo">Fotos de mis ultimos viajes</h1>
-            <a href="" class="cuadro1">
-                <img src="" alt="" class="foto" id="1">
-            </a>
-            <a href="" class="cuadro2">
-                <img src="" alt="" class="foto" id="2">
-            </a>
-            <a href="" class="cuadro3">
-                <img src="" alt="" class="foto" id="3">
-            </a>
-            <a href="" class="cuadro4">
-                <img src="" alt="" class="foto" id="4">
-            </a>
-            <a href="" class="cuadro5">
-                <img src="" alt="" class="foto" id="5">
-            </a>
-            <a href="" class="cuadro6">
-                <img src="" alt="" class="foto" id="6">
-            </a>
+            <div class="fotos_container">
+                <a href="" class="cuadro1">
+                    <img src="" alt="" class="foto" id="Foto_1">
+                </a>
+                <a href="" class="cuadro2">
+                    <img src="" alt="" class="foto" id="Foto_2">
+                </a>
+                <a href="" class="cuadro3">
+                    <img src="" alt="" class="foto" id="Foto_3">
+                </a>
+            </div>
+            <div class="fotos_container">
+                <a href="" class="cuadro4">
+                    <img src="" alt="" class="foto" id="Foto_4">
+                </a>
+                <a href="" class="cuadro5">
+                    <img src="" alt="" class="foto" id="Foto_5">
+                </a>
+                <a href="" class="cuadro6">
+                    <img src="" alt="" class="foto" id="Foto_6">
+                </a>
+            </div>
+        </section>
+        <section class="ultimos_lugares-blog">
+            <h1 class="subtitulo">Ultimos blog</h1>
+            <ul class="ultima_list">
+                <li class="ultima_list-item">
+                    <a href="" class="ultima_list-link">Lima</a>
+                </li>
+                <li class="ultima_list-item">
+                    <a href="" class="ultima_list-link">Trujillo</a>
+                </li>
+                <li class="ultima_list-item">
+                    <a href="" class="ultima_list-link">Tarapoto</a>
+                </li>
+                <li class="ultima_list-item">
+                    <a href="" class="ultima_list-link">Proximamente</a>
+                </li>
+            </ul>
         </section>
     </div>
+    <footer class="footer">
+        <p class="footer-text">Un espacio donde comparto mis aventuras alrededor del mundo. ¡Inspírate a viajar!</p>
+        <ui class="footer_list">
+            <li class="footer_list-item">
+                <a href="" class="footer_list-link">Inicio</a>
+            </li>
+            <li class="footer_list-item">
+                <a href="" class="footer_list-link">Destinos</a>
+            </li>
+            <li class="footer_list-item">
+                <a href="" class="footer_list-link">Blog</a>
+            </li>
+            <li class="footer_list-item">
+                <a href="" class="footer_list-link">Galeria</a>
+            </li>
+            <li class="footer_list-item">
+                <a href="" class="footer_list-link nav_list-link--cta">Contacto</a>
+            </li>
+        </ui>
+        <a href="https://www.instagram.com/zo_wander?igsh=MXdlb2Z5YnVlbDV2ag==" class="instagram">
+            <img src="Assest/Intagram.svg" alt="" class="img_instagram">
+        </a>
+    </footer>
 </body>
 </html>
